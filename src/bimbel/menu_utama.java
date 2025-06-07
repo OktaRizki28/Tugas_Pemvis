@@ -229,7 +229,7 @@ public class menu_utama extends javax.swing.JFrame {
              @Override
              public void actionPerformed(ActionEvent e){
                  putama.removeAll();
-                 putama.add(new form_pembayaran());
+                 putama.add(new pembayaran_siswa());
                  putama.repaint();
                  putama.revalidate();
              }
