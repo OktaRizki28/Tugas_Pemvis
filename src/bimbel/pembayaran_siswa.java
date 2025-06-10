@@ -365,7 +365,7 @@ public class pembayaran_siswa extends javax.swing.JPanel {
             pn_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_detailLayout.createSequentialGroup()
                 .addGap(2, 2, 2)
-                .addGroup(pn_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pn_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
@@ -1200,7 +1200,7 @@ public void otomatis() {
                 if (selectedId != null && !selectedId.isEmpty()) {
                     isiNamaSiswa(selectedId);
                 } else {
-                    nama_siswa.setText(""); 
+                    nama_siswa.setText("--Pilih Nama--"); 
                 }
             }
         });
