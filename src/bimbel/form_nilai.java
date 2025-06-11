@@ -22,7 +22,7 @@ import koneksi.koneksi;
  *
  * @author admin
  */
-public class pembayaran_siswa extends javax.swing.JPanel {
+public class form_nilai extends javax.swing.JPanel {
     private Connection conn = new koneksi().connect();
     private DefaultTableModel tabmode;
     
@@ -30,7 +30,7 @@ public class pembayaran_siswa extends javax.swing.JPanel {
     /**
      * Creates new form form_pembayaran
      */
-    public pembayaran_siswa() {
+    public form_nilai() {
         initComponents();
         otomatis();
         datatabel();
@@ -70,7 +70,7 @@ public class pembayaran_siswa extends javax.swing.JPanel {
         Object [] Baris = {"No Transaksi","ID Siswa", "Nama Siswa","Jenis Kelas","Tanggal",
             "Tagihan","Jumlah Bayar","Tunggakan","Status"};
         tabmode = new DefaultTableModel(null,Baris);
-        tabelbayar.setModel(tabmode);
+        tabel_nilai.setModel(tabmode);
 //        tabel_sementara.setModel(tabmode);
         
          String sql = "SELECT p.no_pembayaran, p.id_siswa, s.nama_siswa, p.Jenis_kelas, "
@@ -176,7 +176,7 @@ public class pembayaran_siswa extends javax.swing.JPanel {
     private void initComponents() {
 
         Pembayaran = new javax.swing.JPanel();
-        Data_Pembayaran = new javax.swing.JPanel();
+        Data_Nilai = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         b_cari = new javax.swing.JButton();
@@ -185,13 +185,13 @@ public class pembayaran_siswa extends javax.swing.JPanel {
         b_hapus = new javax.swing.JButton();
         tcari = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelbayar = new javax.swing.JTable();
+        tabel_nilai = new javax.swing.JTable();
         pn_detail = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         detail_pembayaran = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        Pembayaran_siswa = new javax.swing.JPanel();
+        Input_Nilai = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         cancel2 = new javax.swing.JButton();
@@ -233,7 +233,7 @@ public class pembayaran_siswa extends javax.swing.JPanel {
 
         Pembayaran.setLayout(new java.awt.CardLayout());
 
-        Data_Pembayaran.setBackground(new java.awt.Color(255, 255, 255));
+        Data_Nilai.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -291,7 +291,7 @@ public class pembayaran_siswa extends javax.swing.JPanel {
             }
         });
 
-        tabelbayar.setModel(new javax.swing.table.DefaultTableModel(
+        tabel_nilai.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -302,16 +302,16 @@ public class pembayaran_siswa extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tabelbayar.setFocusable(false);
-        tabelbayar.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        tabelbayar.setRowHeight(38);
-        tabelbayar.getTableHeader().setReorderingAllowed(false);
-        tabelbayar.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabel_nilai.setFocusable(false);
+        tabel_nilai.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tabel_nilai.setRowHeight(38);
+        tabel_nilai.getTableHeader().setReorderingAllowed(false);
+        tabel_nilai.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabelbayarMouseClicked(evt);
+                tabel_nilaiMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tabelbayar);
+        jScrollPane1.setViewportView(tabel_nilai);
 
         pn_detail.setBackground(new java.awt.Color(255, 255, 255));
         pn_detail.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 0, 0)));
@@ -368,17 +368,17 @@ public class pembayaran_siswa extends javax.swing.JPanel {
                 .addGroup(pn_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        javax.swing.GroupLayout Data_PembayaranLayout = new javax.swing.GroupLayout(Data_Pembayaran);
-        Data_Pembayaran.setLayout(Data_PembayaranLayout);
-        Data_PembayaranLayout.setHorizontalGroup(
-            Data_PembayaranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Data_NilaiLayout = new javax.swing.GroupLayout(Data_Nilai);
+        Data_Nilai.setLayout(Data_NilaiLayout);
+        Data_NilaiLayout.setHorizontalGroup(
+            Data_NilaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1018, Short.MAX_VALUE)
-            .addGroup(Data_PembayaranLayout.createSequentialGroup()
+            .addGroup(Data_NilaiLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(b_tambah, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -392,20 +392,20 @@ public class pembayaran_siswa extends javax.swing.JPanel {
                 .addContainerGap())
             .addComponent(pn_detail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Data_PembayaranLayout.setVerticalGroup(
-            Data_PembayaranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Data_PembayaranLayout.createSequentialGroup()
+        Data_NilaiLayout.setVerticalGroup(
+            Data_NilaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Data_NilaiLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(Data_PembayaranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Data_PembayaranLayout.createSequentialGroup()
+                .addGroup(Data_NilaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Data_NilaiLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Data_PembayaranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(Data_NilaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(b_tambah, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(b_hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(Data_PembayaranLayout.createSequentialGroup()
+                    .addGroup(Data_NilaiLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addGroup(Data_PembayaranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(Data_NilaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tcari, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(b_cari))))
                 .addGap(18, 18, 18)
@@ -415,9 +415,9 @@ public class pembayaran_siswa extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Pembayaran.add(Data_Pembayaran, "card2");
+        Pembayaran.add(Data_Nilai, "card2");
 
-        Pembayaran_siswa.setBackground(new java.awt.Color(255, 255, 255));
+        Input_Nilai.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -730,12 +730,12 @@ public class pembayaran_siswa extends javax.swing.JPanel {
                 .addGap(29, 29, 29))
         );
 
-        javax.swing.GroupLayout Pembayaran_siswaLayout = new javax.swing.GroupLayout(Pembayaran_siswa);
-        Pembayaran_siswa.setLayout(Pembayaran_siswaLayout);
-        Pembayaran_siswaLayout.setHorizontalGroup(
-            Pembayaran_siswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Input_NilaiLayout = new javax.swing.GroupLayout(Input_Nilai);
+        Input_Nilai.setLayout(Input_NilaiLayout);
+        Input_NilaiLayout.setHorizontalGroup(
+            Input_NilaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(Pembayaran_siswaLayout.createSequentialGroup()
+            .addGroup(Input_NilaiLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(b_tambah2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -743,27 +743,27 @@ public class pembayaran_siswa extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cancel2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(Pembayaran_siswaLayout.createSequentialGroup()
+            .addGroup(Input_NilaiLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Pembayaran_siswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(Input_NilaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 417, Short.MAX_VALUE)
                     .addComponent(t_waktu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tglTransaksi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2))
         );
-        Pembayaran_siswaLayout.setVerticalGroup(
-            Pembayaran_siswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pembayaran_siswaLayout.createSequentialGroup()
+        Input_NilaiLayout.setVerticalGroup(
+            Input_NilaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Input_NilaiLayout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Pembayaran_siswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Input_NilaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(b_tambah2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cancel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(b_hapus1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Pembayaran_siswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Pembayaran_siswaLayout.createSequentialGroup()
+                .addGroup(Input_NilaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Input_NilaiLayout.createSequentialGroup()
                         .addComponent(tglTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(t_waktu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -773,7 +773,7 @@ public class pembayaran_siswa extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Pembayaran.add(Pembayaran_siswa, "card2");
+        Pembayaran.add(Input_Nilai, "card2");
 
         add(Pembayaran, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -782,7 +782,7 @@ public class pembayaran_siswa extends javax.swing.JPanel {
         Object [] Baris = {"No Transaksi","ID Siswa", "Nama Siswa","Jenis Kelas","Lama Belajar","Tanggal Pembayaran",
             "Tagihan","Jumlah Bayar","Tunggakan","Status Pembayaran"};
         tabmode = new DefaultTableModel(null,Baris);
-        tabelbayar.setModel(tabmode);
+        tabel_nilai.setModel(tabmode);
 //        TablePembayaran.setModel(tabmode);
         
             // Dapatkan istilah pencarian dari kolom teks
@@ -851,7 +851,7 @@ public class pembayaran_siswa extends javax.swing.JPanel {
             Pembayaran.repaint();
             Pembayaran.revalidate();
 
-            Pembayaran.add(Pembayaran_siswa);
+            Pembayaran.add(Input_Nilai);
             mati();
             Tanggal();
             isiComboBox();
@@ -859,12 +859,12 @@ public class pembayaran_siswa extends javax.swing.JPanel {
             Kosong();
     }//GEN-LAST:event_b_tambahActionPerformed
 
-    private void tabelbayarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelbayarMouseClicked
+    private void tabel_nilaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabel_nilaiMouseClicked
         tabelPembayaranClicked();
         pn_detail.setVisible(true);
 //        b_hapus.setVisible(true);
 //        cancel.setVisible(true);
-    }//GEN-LAST:event_tabelbayarMouseClicked
+    }//GEN-LAST:event_tabel_nilaiMouseClicked
 
     private void cancel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel2ActionPerformed
         // TODO add your handling code here:
@@ -872,7 +872,7 @@ public class pembayaran_siswa extends javax.swing.JPanel {
          Pembayaran.repaint();
         Pembayaran.revalidate();
                 
-        Pembayaran.add(Data_Pembayaran);
+        Pembayaran.add(Data_Nilai);
         Kosong();
         otomatis();
         datatabel();
@@ -1086,10 +1086,10 @@ public class pembayaran_siswa extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Data_Pembayaran;
+    private javax.swing.JPanel Data_Nilai;
     private javax.swing.JButton Hitung1;
+    private javax.swing.JPanel Input_Nilai;
     private javax.swing.JPanel Pembayaran;
-    private javax.swing.JPanel Pembayaran_siswa;
     private javax.swing.JButton Tambah;
     private javax.swing.JButton Total;
     private javax.swing.JButton b_cari;
@@ -1133,7 +1133,7 @@ public class pembayaran_siswa extends javax.swing.JPanel {
     private javax.swing.JTextField t_tanggal;
     private javax.swing.JPanel t_waktu;
     private javax.swing.JTable tabel_bayar;
-    private javax.swing.JTable tabelbayar;
+    private javax.swing.JTable tabel_nilai;
     private javax.swing.JTextField tagihan;
     private javax.swing.JTextField tcari;
     private javax.swing.JPanel tglTransaksi;
@@ -1310,10 +1310,10 @@ private void Tagihan() {
 }
 //Warna Untuk Header
  protected void warna_header(){
-             tabelbayar.setShowVerticalLines(true);
-             tabelbayar.setGridColor(java.awt.Color.GRAY);
+             tabel_nilai.setShowVerticalLines(true);
+             tabel_nilai.setGridColor(java.awt.Color.GRAY);
           // Ubah warna header 
-        javax.swing.table.JTableHeader header = tabelbayar.getTableHeader();
+        javax.swing.table.JTableHeader header = tabel_nilai.getTableHeader();
         header.setDefaultRenderer(new javax.swing.table.DefaultTableCellRenderer() {
           @Override
          public java.awt.Component getTableCellRendererComponent(javax.swing.JTable table, Object value,boolean isSelected, boolean hasFocus, int row, int column) {
@@ -1364,9 +1364,9 @@ private void Tagihan() {
     }
 
     private void tabelPembayaranClicked() {
-    int selectedRow = tabelbayar.getSelectedRow();
+    int selectedRow = tabel_nilai.getSelectedRow();
     if (selectedRow >= 0) {
-        String noPembayaran = tabelbayar.getValueAt(selectedRow, 0).toString(); // Asumsikan kolom 0 adalah no_pembayaran
+        String noPembayaran = tabel_nilai.getValueAt(selectedRow, 0).toString(); // Asumsikan kolom 0 adalah no_pembayaran
         tampilDetailBerdasarkanNoPembayaran(noPembayaran);
     }
 }

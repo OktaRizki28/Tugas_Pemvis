@@ -229,14 +229,23 @@ public class menu_utama extends javax.swing.JFrame {
              @Override
              public void actionPerformed(ActionEvent e){
                  putama.removeAll();
-                 putama.add(new pembayaran_siswa());
+                 putama.add(new form_pembayaran());
                  putama.repaint();
                  putama.revalidate();
              }
 
         });
         MenuItem Penggajian = new MenuItem(null,true,IconPenggajian,"penggajian",null);
-        MenuItem Nilai = new MenuItem(null,true,IconNilai,"Nilai Siswa",null);
+        
+        MenuItem Nilai = new MenuItem(null,true,IconNilai,"Nilai Siswa",new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                 putama.removeAll();
+                 putama.add(new form_nilai());
+                 putama.repaint();
+                 putama.revalidate();
+             }
+        });
         
         MenuItem dashboard = new MenuItem(Icondashboard,false,null,"Home",new ActionListener() {
             @Override
