@@ -328,7 +328,7 @@ public class form_nilai extends javax.swing.JPanel {
                 .addComponent(b_tambah, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(b_hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 401, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 421, Short.MAX_VALUE)
                 .addComponent(t_cari, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(b_cari)
@@ -399,6 +399,7 @@ public class form_nilai extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("ID Siswa");
 
+        id_siswa.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
         id_siswa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         id_siswa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -411,8 +412,10 @@ public class form_nilai extends javax.swing.JPanel {
         jLabel4.setText("Nama Siswa");
 
         nama_siswa.setBackground(new java.awt.Color(239, 239, 239));
+        nama_siswa.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
         nama_siswa.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
+        nama_mapel.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
         nama_mapel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         nama_mapel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -425,6 +428,7 @@ public class form_nilai extends javax.swing.JPanel {
         jLabel6.setText("Kelas");
 
         kelas.setBackground(new java.awt.Color(239, 239, 239));
+        kelas.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
         kelas.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
@@ -436,9 +440,11 @@ public class form_nilai extends javax.swing.JPanel {
         jLabel8.setText("Tanggal");
 
         tanggal.setBackground(new java.awt.Color(239, 239, 239));
+        tanggal.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
         tanggal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         nilai_tes.setBackground(new java.awt.Color(239, 239, 239));
+        nilai_tes.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
         nilai_tes.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         nilai_tes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -455,6 +461,7 @@ public class form_nilai extends javax.swing.JPanel {
         jLabel10.setText("Catatan");
 
         catatan.setColumns(20);
+        catatan.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
         catatan.setRows(5);
         catatan.setBorder(new javax.swing.border.MatteBorder(null));
         jScrollPane2.setViewportView(catatan);
@@ -464,6 +471,7 @@ public class form_nilai extends javax.swing.JPanel {
         jLabel11.setText("ID Mapel");
 
         id_mapel.setBackground(new java.awt.Color(239, 239, 239));
+        id_mapel.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
         id_mapel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout tambah_dataLayout = new javax.swing.GroupLayout(tambah_data);
@@ -473,31 +481,28 @@ public class form_nilai extends javax.swing.JPanel {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(tambah_dataLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(id_siswa, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nama_siswa, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(kelas)
-                    .addComponent(id_siswa, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(nama_siswa)
-                    .addComponent(nama_mapel, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nilai_tes)
-                    .addComponent(tanggal)
-                    .addComponent(id_mapel)
-                    .addGroup(tambah_dataLayout.createSequentialGroup()
-                        .addGroup(tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel3)
-                            .addGroup(tambah_dataLayout.createSequentialGroup()
-                                .addComponent(b_save, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(b_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
-                        .addGap(0, 806, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(nama_mapel, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(id_mapel, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tanggal, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nilai_tes, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tambah_dataLayout.createSequentialGroup()
+                        .addComponent(b_save, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(b_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE))
+                .addGap(56, 56, 56))
         );
         tambah_dataLayout.setVerticalGroup(
             tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -507,7 +512,7 @@ public class form_nilai extends javax.swing.JPanel {
                 .addGroup(tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(b_save, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(b_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(id_siswa, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -515,7 +520,7 @@ public class form_nilai extends javax.swing.JPanel {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nama_siswa, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(kelas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -538,8 +543,8 @@ public class form_nilai extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(115, 115, 115))
         );
 
         panel_guru.add(tambah_data, "card2");
