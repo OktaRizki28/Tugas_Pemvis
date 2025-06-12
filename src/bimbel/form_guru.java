@@ -73,11 +73,14 @@ public class form_guru extends javax.swing.JPanel {
         rjk1.setSelected(false);
         rjk2.setSelected(false);
         talm.setText("");
+        email_guru.setText("");
+        pendidikan.setText("");
         
     }
         protected void datatabel(){
              
-        Object [] Baris = {"ID Guru","Nama Guru", "No. Telepon","Jenis Klamin","Alamat"};
+        Object [] Baris = {"ID Guru","Nama Guru", "No. Telepon","Email","Jenis Klamin",
+                           "Pendidikan Terakhir","Alamat"};
         tabmode = new DefaultTableModel(null,Baris);
         tabel_guru.setModel(tabmode);
         String sql = " SELECT * FROM tabel_guru";
@@ -88,10 +91,12 @@ public class form_guru extends javax.swing.JPanel {
                 String a = hasil.getString("id");
                 String b = hasil.getString("nama");
                 String c = hasil.getString("telp");
-                String d = hasil.getString("jk");
-                String e = hasil.getString("alamat");
+                String d = hasil.getString("email_guru");
+                String e = hasil.getString("jk");
+                String f = hasil.getString("pendidikan");
+                String g = hasil.getString("alamat");
             
-                String[] data={a,b,c,d,e};
+                String[] data={a,b,c,d,e,f,g};
                 tabmode.addRow(data);
        
             } 
@@ -102,22 +107,22 @@ public class form_guru extends javax.swing.JPanel {
         }
     }
         protected void tambah(){
-             String sql = "INSERT INTO tabel_Guru (id,nama,telp,jk,alamat) VALUES (?,?, ?, ?, ?)";
+             String sql = "INSERT INTO tabel_Guru  VALUES (?,?, ?, ?, ?,?,?)";
         try {
         PreparedStatement stat = conn.prepareStatement(sql);
-         stat.setString(1,tid.getText());
+        stat.setString(1,tid.getText());
         stat.setString(2,tnama.getText());
-         stat.setString(3,ttlp.getText());
+        stat.setString(3,ttlp.getText());
+        stat.setString(4,email_guru.getText());
 
-        
-        
         
         String Jkel=" ";
         if(rjk1.isSelected()) Jkel="laki-laki";
         else Jkel="Perempuan";
-        stat.setString(4,Jkel);
+        stat.setString(5,Jkel);
         
-        stat.setString(5,talm.getText());
+        stat.setString(6,pendidikan.getText());
+        stat.setString(7,talm.getText());
         
         stat.executeUpdate();
         JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
@@ -141,18 +146,21 @@ public class form_guru extends javax.swing.JPanel {
                 }
 
                 // Corrected SQL Syntax: Removed comma before WHERE
-                String sql = "UPDATE tabel_guru SET nama=?, telp=?, jk=?, alamat=? WHERE id=?";
+                String sql = "UPDATE tabel_guru SET nama=?, telp=?, email_guru=?,  jk=?,"
+                        + "pendidikan=?, alamat=? WHERE id=?";
                 PreparedStatement stat = conn.prepareStatement(sql);
 
                 // Mengatur parameter
-                stat.setString(5, tid.getText());
+                stat.setString(7, tid.getText());
                 stat.setString(1, tnama.getText());
                 stat.setString(2,ttlp.getText());
+                stat.setString(3,email_guru.getText());
 
                 String jkel = rjk1.isSelected() ? "Laki-Laki" : "Perempuan";
-                stat.setString(3, jkel);
-
-                stat.setString(4, talm.getText());
+                stat.setString(4, jkel);
+                
+                stat.setString(5,pendidikan.getText());
+                stat.setString(6, talm.getText());
 
 
                 // Eksekusi update
@@ -208,6 +216,10 @@ public class form_guru extends javax.swing.JPanel {
         rjk2 = new javax.swing.JRadioButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         talm = new javax.swing.JTextArea();
+        jLabel8 = new javax.swing.JLabel();
+        email_guru = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        pendidikan = new javax.swing.JTextField();
 
         setLayout(new java.awt.CardLayout());
 
@@ -416,9 +428,19 @@ public class form_guru extends javax.swing.JPanel {
 
         rjk1.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
         rjk1.setText("Laki-laki");
+        rjk1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rjk1ActionPerformed(evt);
+            }
+        });
 
         rjk2.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
         rjk2.setText("Perempuan");
+        rjk2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rjk2ActionPerformed(evt);
+            }
+        });
 
         talm.setBackground(new java.awt.Color(239, 239, 239));
         talm.setColumns(20);
@@ -427,44 +449,70 @@ public class form_guru extends javax.swing.JPanel {
         talm.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
         jScrollPane2.setViewportView(talm);
 
+        jLabel8.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel8.setText("Email");
+
+        email_guru.setBackground(new java.awt.Color(239, 239, 239));
+        email_guru.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        email_guru.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        email_guru.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                email_guruActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel9.setText("Pendidikan Terakhir");
+
+        pendidikan.setBackground(new java.awt.Color(239, 239, 239));
+        pendidikan.setFont(new java.awt.Font("Verdana", 0, 20)); // NOI18N
+        pendidikan.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(102, 102, 102)));
+        pendidikan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pendidikanActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout tambah_dataLayout = new javax.swing.GroupLayout(tambah_data);
         tambah_data.setLayout(tambah_dataLayout);
         tambah_dataLayout.setHorizontalGroup(
             tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(tambah_dataLayout.createSequentialGroup()
-                .addGroup(tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(28, 28, 28)
+                .addGroup(tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tambah_dataLayout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 981, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tambah_dataLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
                         .addGroup(tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel9)
                             .addGroup(tambah_dataLayout.createSequentialGroup()
-                                .addComponent(b_save, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(b_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel5)
-                            .addGroup(tambah_dataLayout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jLabel7))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tambah_dataLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
+                                .addComponent(rjk1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(49, 49, 49)
+                                .addComponent(rjk2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tambah_dataLayout.createSequentialGroup()
                         .addGroup(tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(tambah_dataLayout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(tnama))
-                            .addComponent(ttlp)
-                            .addComponent(tid)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tambah_dataLayout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(rjk1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(rjk2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE)
+                            .addComponent(pendidikan, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tid, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tnama, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ttlp, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(email_guru, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tambah_dataLayout.createSequentialGroup()
+                                .addGroup(tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addGroup(tambah_dataLayout.createSequentialGroup()
+                                        .addComponent(b_save, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(31, 31, 31)
+                                        .addComponent(b_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel8))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(48, 48, 48))))
         );
         tambah_dataLayout.setVerticalGroup(
             tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,16 +535,24 @@ public class form_guru extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ttlp, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(email_guru, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tambah_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rjk1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rjk2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pendidikan, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
         );
 
         panel_guru.add(tambah_data, "card2");
@@ -584,23 +640,27 @@ public class form_guru extends javax.swing.JPanel {
             String c = tabmode.getValueAt(bar, 2).toString();
             String d = tabmode.getValueAt(bar, 3).toString();
             String e = tabmode.getValueAt(bar, 4).toString();
+            String f = tabmode.getValueAt(bar, 5).toString();
+            String g = tabmode.getValueAt(bar, 6).toString();
 
             tid.setText(a);
             tnama.setText(b);
             ttlp.setText(c);
+            email_guru.setText(d);
             // Set the date in the date picker
            
             rjk1.setSelected(true);
 
-            if (d.equals("laki-laki")) {
+            if (e.equals("laki-laki")) {
                 rjk1.setSelected(true);
                 rjk2.setSelected(false);
             } else {
                 rjk1.setSelected(false);
                 rjk2.setSelected(true);
             }
-
-            talm.setText(e);
+            
+            pendidikan.setText(c);
+            talm.setText(g);
         } else {
             System.out.println("No row selected.");
             JOptionPane.showMessageDialog(null, "Please select a row to edit.");
@@ -625,7 +685,8 @@ public class form_guru extends javax.swing.JPanel {
     }//GEN-LAST:event_b_cancelActionPerformed
 
     private void b_cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cariActionPerformed
-    Object [] Baris = {"ID Guru","Nama Guru", "No. Telepon","Jenis Klamin","Alamat"};
+    Object [] Baris = {"ID Guru","Nama Guru", "No. Telepon","Email","Jenis Klamin",
+                        "Pendidikan Terakhir","Alamat"};
     tabmode = new DefaultTableModel(null, Baris);
     tabel_guru.setModel(tabmode);
 
@@ -653,11 +714,13 @@ public class form_guru extends javax.swing.JPanel {
                 String a = hasil.getString("id");
                 String b = hasil.getString("nama");
                 String c = hasil.getString("telp");
-                String d = hasil.getString("jk");
-                String e = hasil.getString("alamat");
-
-            String[] data = { a, b, c, d, e };
-            tabmode.addRow(data);
+                String d = hasil.getString("email_guru");
+                String e = hasil.getString("jk");
+                String f = hasil.getString("pendidikan");
+                String g = hasil.getString("alamat");
+            
+                String[] data={a,b,c,d,e,f,g};
+                tabmode.addRow(data);
         }
 
         if (!hasResults) {
@@ -669,6 +732,22 @@ public class form_guru extends javax.swing.JPanel {
     }
     }//GEN-LAST:event_b_cariActionPerformed
 
+    private void email_guruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_guruActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_email_guruActionPerformed
+
+    private void pendidikanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pendidikanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pendidikanActionPerformed
+
+    private void rjk2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rjk2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rjk2ActionPerformed
+
+    private void rjk1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rjk1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rjk1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_cancel;
@@ -677,6 +756,7 @@ public class form_guru extends javax.swing.JPanel {
     private javax.swing.JButton b_save;
     private javax.swing.JButton b_tambah;
     private javax.swing.JPanel data_guru;
+    private javax.swing.JTextField email_guru;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -684,11 +764,14 @@ public class form_guru extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel panel_guru;
+    private javax.swing.JTextField pendidikan;
     private javax.swing.JRadioButton rjk1;
     private javax.swing.JRadioButton rjk2;
     private javax.swing.JTextField t_cari;
