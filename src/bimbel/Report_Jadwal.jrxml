@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="efb92caf-cd38-4992-a315-7dd24ed3d419">
+	<property name="ireport.zoom" value="1.9487171000000185"/>
+	<property name="ireport.x" value="446"/>
+	<property name="ireport.y" value="300"/>
+	<parameter name="waktu" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tabel_jadwal.`id_mapel` AS tabel_jadwal_id_mapel,
+     tabel_jadwal.`mata_pelajaran` AS tabel_jadwal_mata_pelajaran,
+     tabel_jadwal.`hari` AS tabel_jadwal_hari,
+     tabel_jadwal.`jam` AS tabel_jadwal_jam,
+     tabel_jadwal.`pengajar` AS tabel_jadwal_pengajar,
+     tabel_jadwal.`tempat` AS tabel_jadwal_tempat
+FROM
+     `tabel_jadwal` tabel_jadwal]]>
+	</queryString>
+	<field name="tabel_jadwal_id_mapel" class="java.lang.String"/>
+	<field name="tabel_jadwal_mata_pelajaran" class="java.lang.String"/>
+	<field name="tabel_jadwal_hari" class="java.lang.String"/>
+	<field name="tabel_jadwal_jam" class="java.lang.String"/>
+	<field name="tabel_jadwal_pengajar" class="java.lang.String"/>
+	<field name="tabel_jadwal_tempat" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="132" y="0" width="290" height="19" backcolor="#66FF66" uuid="fae26583-95c8-461f-b754-42e5c5919a61"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="15" isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[DATA JADWAL MENGAJAR ZAF JUNIOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="132" y="19" width="290" height="27" backcolor="#66FF66" uuid="70559db7-4143-4a8d-baff-24518f65ea13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ Jl. Mesjid Kp. Utan, RT.3/RW.7, Krukut,Kec.
+ Limo, Kota Depok, Jawa Barat 16512]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="65" width="555" height="1" uuid="f0a1f694-d78d-4793-a5d8-8ee8fd98f72e"/>
+			</line>
+			<image>
+				<reportElement x="0" y="0" width="96" height="65" uuid="9b6adf7c-8c30-46e1-9621-d4494abd507a"/>
+				<imageExpression><![CDATA["C:\\Users\\LENOVO\\Pictures\\logo zaf.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="176" y="66" width="201" height="20" uuid="a4185a8e-30eb-43a4-b067-b8cfd5aec6bf"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Laporan Data  Siswa Pada Bimbel Zaf Junior]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="78" y="21" width="54" height="14" backcolor="#66FF66" uuid="6bdc5973-2033-45bb-bf2f-e630ca820cb6"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[ID MAPEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="132" y="21" width="66" height="14" backcolor="#66FF66" uuid="f8f0cec8-acc8-4a2d-bb89-5de98a9a4fb0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Mata Pelajaran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="198" y="21" width="38" height="14" backcolor="#66FF66" uuid="370f934d-dfed-41c5-82f2-864b53c78e78"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Hari ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="236" y="21" width="64" height="14" backcolor="#66FF66" uuid="1587f9f5-55f4-4423-968f-45d948d1727a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Jam ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="300" y="21" width="100" height="14" backcolor="#66FF66" uuid="ad0e699b-8614-4570-a989-7aa6904cffeb"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama Pengajar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="400" y="21" width="79" height="14" backcolor="#66FF66" uuid="620e55dc-d75d-430d-8112-70798245f23c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Tempat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="51" y="21" width="27" height="14" backcolor="#66FF66" uuid="8829ce92-798c-4f9d-91b5-7fff49a654b4"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[No]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="51" y="0" width="27" height="20" uuid="c0bb6da5-cb40-4f62-8d5e-5e7c59692cf1"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="0" width="54" height="20" uuid="9bbbac4b-7046-490d-bd1f-03ffd2a81168"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tabel_jadwal_id_mapel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="0" width="66" height="20" uuid="2e6a5306-bcf2-4af2-863a-d5e77e8f7ed1"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tabel_jadwal_mata_pelajaran}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="0" width="38" height="20" uuid="6c48489a-dee5-488e-9c2b-116c00822e8a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tabel_jadwal_hari}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="236" y="0" width="64" height="20" uuid="35d4287a-0cb7-4efd-881f-d968c120c7c0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tabel_jadwal_jam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="bb32b267-07c9-41ff-b600-35ecbabe52f1"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tabel_jadwal_pengajar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="79" height="20" uuid="8e451598-0601-44b5-a7f4-663089587c28"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tabel_jadwal_tempat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="38" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="123" splitType="Stretch">
+			<staticText>
+				<reportElement x="378" y="8" width="69" height="17" uuid="5555c3b2-9f53-4b59-97e5-ac173ec26bfd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Jakarta]]></text>
+			</staticText>
+			<line>
+				<reportElement x="378" y="25" width="155" height="1" uuid="ba3ef7c6-1389-47be-a489-1cb613aed4bd"/>
+			</line>
+			<staticText>
+				<reportElement x="400" y="26" width="111" height="17" uuid="14174364-5810-4733-a631-87eb6ac89366"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Pengurus Bimbel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="103" width="111" height="20" uuid="f149120a-1e50-4a0e-83c4-a35464287311"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Okta Rizki Ramadhani]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="8" width="78" height="17" uuid="533ccfee-da61-4a40-9c59-210b2e959518"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{waktu}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
