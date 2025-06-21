@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="08d2aa22-5f86-4f14-bf5b-ac1a24274a1c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="kode" class="java.lang.String"/>
+	<parameter name="waktu" class="java.sql.Time">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tabel_pembayaran.`no_pembayaran` AS tabel_pembayaran_no_pembayaran,
+     tabel_pembayaran.`id_siswa` AS tabel_pembayaran_id_siswa,
+     tabel_pembayaran.`jenis_kelas` AS tabel_pembayaran_jenis_kelas,
+     tabel_pembayaran.`lama_belajar` AS tabel_pembayaran_lama_belajar,
+     tabel_pembayaran.`tgl` AS tabel_pembayaran_tgl,
+     tabel_pembayaran.`Tagihan` AS tabel_pembayaran_Tagihan,
+     tabel_pembayaran.`nominal_bayar` AS tabel_pembayaran_nominal_bayar,
+     tabel_pembayaran.`tunggakan` AS tabel_pembayaran_tunggakan,
+     tabel_pembayaran.`status_pembayaran` AS tabel_pembayaran_status_pembayaran
+FROM
+     `tabel_pembayaran` tabel_pembayaran where no_pembayaran = $P{kode}]]>
+	</queryString>
+	<field name="tabel_pembayaran_no_pembayaran" class="java.lang.String"/>
+	<field name="tabel_pembayaran_id_siswa" class="java.lang.String"/>
+	<field name="tabel_pembayaran_jenis_kelas" class="java.lang.String"/>
+	<field name="tabel_pembayaran_lama_belajar" class="java.lang.Integer"/>
+	<field name="tabel_pembayaran_tgl" class="java.lang.String"/>
+	<field name="tabel_pembayaran_Tagihan" class="java.math.BigDecimal"/>
+	<field name="tabel_pembayaran_nominal_bayar" class="java.math.BigDecimal"/>
+	<field name="tabel_pembayaran_tunggakan" class="java.math.BigDecimal"/>
+	<field name="tabel_pembayaran_status_pembayaran" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="143" y="11" width="235" height="31" uuid="1cef0b31-71f9-4a38-8158-f217b7eb297f"/>
+				<textElement>
+					<font fontName="Segoe UI" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bukti Transaksi Pembayaran]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="123" height="79" uuid="c2e28b14-3fad-417b-92e4-606b214893ef"/>
+				<imageExpression><![CDATA["C:\\Users\\SUSI\\Downloads\\zaf_nobg.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="184" y="42" width="140" height="20" uuid="e5817635-b11a-41c5-b5d0-fadabc4799f6"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[JL.xxx, No.XXX, Kec.xxx]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="91" width="555" height="1" uuid="fc4c47ef-0e4b-4b9b-98f1-e3de7dd28eb8"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="457" y="1" width="100" height="20" uuid="69d0eb9b-e486-4301-a057-b611d36f5967"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{waktu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="368" y="0" width="100" height="20" uuid="5d6e3cca-699d-4595-a1c9-8bc9c5b13a07"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal/Waktu :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="91" y="0" width="112" height="20" uuid="35e6dca1-9f7c-4d15-9c07-0bd90162f78a"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[No Pembayaran     :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="203" y="0" width="198" height="20" uuid="0590134a-33b8-4365-8335-c246967ef3fd"/>
+				<textFieldExpression><![CDATA[$F{tabel_pembayaran_no_pembayaran}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="91" y="29" width="112" height="20" uuid="b48ef968-f216-4c3f-a451-2225fc8cfad1"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[ID Siswa                  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="203" y="29" width="165" height="20" uuid="d5ffb504-f8ef-4949-a57d-3562c145522d"/>
+				<textFieldExpression><![CDATA[$F{tabel_pembayaran_id_siswa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="93" splitType="Stretch">
+			<textField>
+				<reportElement x="203" y="6" width="157" height="20" uuid="aa841435-2c73-46bd-957c-6c38416c6534"/>
+				<textFieldExpression><![CDATA[$F{tabel_pembayaran_Tagihan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="91" y="4" width="112" height="20" uuid="ba9d0cbc-db38-4b0e-aa90-41935cbbb3ab"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[Tagihan                   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="204" y="60" width="175" height="20" uuid="852d0099-75ea-4f93-bfd4-3ef5d8c19474"/>
+				<textFieldExpression><![CDATA[$F{tabel_pembayaran_tunggakan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="91" y="58" width="112" height="20" uuid="653344af-b43e-49ea-a5b4-ed59c3224516"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[Tunggakan             :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="203" y="31" width="198" height="20" uuid="14beb63c-f9f0-44e7-a539-926f15ff5b02"/>
+				<textFieldExpression><![CDATA[$F{tabel_pembayaran_nominal_bayar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="91" y="30" width="112" height="20" uuid="45aca5cf-a2f9-4378-97b9-b5782f97afe1"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[Nominal Bayar        :]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement x="91" y="0" width="112" height="20" uuid="63cb3e0c-0066-4aa6-a678-0fff9bf6925f"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[Status Pembayaran :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="204" y="1" width="211" height="20" uuid="e63016ac-599b-4910-9c43-5c2476f4bda7"/>
+				<textFieldExpression><![CDATA[$F{tabel_pembayaran_status_pembayaran}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="36" width="555" height="1" uuid="30f02315-9bd3-45db-a65a-d4d1388211c2"/>
+			</line>
+			<staticText>
+				<reportElement x="203" y="37" width="140" height="20" uuid="e4e7b639-a0ad-4817-af27-f520db52e773"/>
+				<textElement>
+					<font fontName="Segoe UI" size="14"/>
+				</textElement>
+				<text><![CDATA[*** TERIMA KASIH***]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
